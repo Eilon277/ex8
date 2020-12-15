@@ -88,3 +88,16 @@ def is_valid_row(row, blocks):
         else:
             return False
     return len(blocks) == index
+
+def intersection_row(rows):
+    row_option = []
+    rows_organized = [list(x) for x in zip(*rows)]
+    for row in rows_organized:
+        if row.count(X) == len(row):
+            row_option.append(X)
+        elif row.count(BLACK) == len(row):
+            row_option.append(BLACK)
+        else:
+            row_option.append(UNKNOWN)
+
+    return row_option
